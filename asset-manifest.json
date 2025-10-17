@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.62bd9cf1.css",
+    "main.js": "/static/js/main.840e92c4.js",
+    "static/js/453.dee37f48.chunk.js": "/static/js/453.dee37f48.chunk.js",
+    "static/media/IMG_9101.jpg": "/static/media/IMG_9101.492192358eec9d6fc8c6.jpg",
+    "static/media/ai_companionship.png": "/static/media/ai_companionship.9a8f1bd6fa07afbbd4a3.png",
+    "static/media/burst.png": "/static/media/burst.732fe97cfa6cd54ab41f.png",
+    "static/media/gui.jpg": "/static/media/gui.08ce08c13b43356612e8.jpg",
+    "static/media/hilite.png": "/static/media/hilite.1153a70625d01970fe62.png",
+    "static/media/commit.png": "/static/media/commit.2089e79e6b3eb6ff64bf.png",
+    "static/media/culturebank.png": "/static/media/culturebank.8fedc04fb1ace1bab585.png",
+    "static/media/metahkg.png": "/static/media/metahkg.940b7a8005634851be56.png",
+    "static/media/tgonline.png": "/static/media/tgonline.d65814fef8598d015b90.png",
+    "static/media/ga2graph.png": "/static/media/ga2graph.1ac317dae39571ccc6ef.png",
+    "static/media/organize_then_vote.png": "/static/media/organize_then_vote.d1cb3b5d844198607df9.png",
+    "index.html": "/index.html",
+    "main.62bd9cf1.css.map": "/static/css/main.62bd9cf1.css.map",
+    "main.840e92c4.js.map": "/static/js/main.840e92c4.js.map",
+    "453.dee37f48.chunk.js.map": "/static/js/453.dee37f48.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62bd9cf1.css",
+    "static/js/main.840e92c4.js"
+  ]
+}
