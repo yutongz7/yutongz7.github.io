@@ -40,10 +40,6 @@ function HighlightAuthors({ authors, myName = "Yutong Zhang" }) {
   );
 }
 
-/**
- * Research card: image (left on desktop, top on mobile), title, authors, venue/year,
- * and optional link chips (Paper, Thread, Code, HF, Video, Site)
- */
 function ResearchCard({
   imageSrc,
   imageAlt,
@@ -171,8 +167,6 @@ function ResearchCard({
 }
 
 export default function Research() {
-  // NOTE: Replace imageSrc values with your actual images in /src/images/
-  // (Use consistent aspect ratios; cards crop via object-fit: cover.)
   const items = [
     {
       title:

@@ -19,42 +19,6 @@ import {
 } from "react-icons/fa6";
 import { SiGooglescholar } from "react-icons/si";
 
-/** Visitors map card (loads external script once, placed inside a .card) */
-// function VisitorsMap() {
-//   const containerRef = useRef(null);
-
-//   useEffect(() => {
-//     if (!containerRef.current) return;
-
-//     // clear container in case of hot reload/nav
-//     containerRef.current.innerHTML = "";
-
-//     const s = document.createElement("script");
-//     s.type = "text/javascript";
-//     s.id = "mapmyvisitors";
-//     s.src =
-//       "https://mapmyvisitors.com/map.js?cl=fff8e6&w=a&t=n&d=_u7xnM3BAbJNl9U6NQTSTOlq_BqOnm4XdFXwhGijbQo&co=ffffff&cmn=d1ae8b&cmo=4a4e69&ct=654a4a";
-//     containerRef.current.appendChild(s);
-
-//     return () => {
-//       if (containerRef.current) containerRef.current.innerHTML = "";
-//       const existing = document.getElementById("mapmyvisitors");
-//       if (existing && existing.parentNode)
-//         existing.parentNode.removeChild(existing);
-//     };
-//   }, []);
-
-//   return (
-//     <div className="card" aria-label="Visitors map">
-//       <div
-//         ref={containerRef}
-//         className="visitors-map"
-//         style={{ minHeight: 140 }}
-//       />
-//     </div>
-//   );
-// }
-/** Visitors map card (responsive & shows full content) */
 function VisitorsMap() {
   const containerRef = useRef(null);
   const innerRef = useRef(null);
@@ -65,10 +29,8 @@ function VisitorsMap() {
     const container = containerRef.current;
     if (!container) return;
 
-    // Clean container in case of hot reload/nav
     container.innerHTML = "";
 
-    // Load external widget script
     const s = document.createElement("script");
     s.type = "text/javascript";
     s.id = "mapmyvisitors";
@@ -76,47 +38,38 @@ function VisitorsMap() {
     s.src =
       "https://mapmyvisitors.com/map.js?cl=fff8e6&w=a&t=n&d=_u7xnM3BAbJNl9U6NQTSTOlq_BqOnm4XdFXwhGijbQo&co=ffffff&cmn=d1ae8b&cmo=4a4e69&ct=654a4a";
 
-    // Attach first, then set up observers to catch when the widget drops in
     container.appendChild(s);
 
-    // Function to (re)find the injected widget root
     const findInner = () => {
-      // The widget typically injects a single child node
       const inner =
         container.firstElementChild ||
         container.querySelector("iframe, div, canvas, img");
       if (!inner) return null;
 
-      // Prepare for scaling and layout
       inner.style.transformOrigin = "top left";
-      inner.style.position = "absolute"; // we'll size container height
+      inner.style.position = "absolute";
       inner.style.left = "0";
       inner.style.top = "0";
       return inner;
     };
 
-    // The scaler: scale inner to fit container width; set container height to scaled height
     const rescale = () => {
       const inner = innerRef.current || findInner();
       if (!inner || !container) return;
 
-      // Measure container width (available width)
       const cw = container.clientWidth || 1;
 
-      // Infer the widget's intrinsic size
-      // Try style width/height > bounding box > sensible fallbacks
       const rawW =
         parseInt(inner.style.width, 10) ||
         0 ||
         Math.round(inner.getBoundingClientRect().width) ||
-        800; // fallback
+        800;
       const rawH =
         parseInt(inner.style.height, 10) ||
         0 ||
         Math.round(inner.getBoundingClientRect().height) ||
-        500; // fallback
+        500;
 
-      // If the widget hasn't painted yet and reported 0x0, try again soon
       if (rawW === 0 || rawH === 0) {
         requestAnimationFrame(rescale);
         return;
@@ -127,15 +80,13 @@ function VisitorsMap() {
       // Apply scale to the inner widget
       inner.style.transform = `scale(${scale})`;
 
-      // Make the container reserve the correct height so content is fully visible
       container.style.height = `${Math.round(rawH * scale)}px`;
     };
 
-    // Mutation observer: when the widget injects/changes, hook and rescale
     mutationObserverRef.current = new MutationObserver(() => {
       const inner = findInner();
       if (inner) innerRef.current = inner;
-      // rescale shortly after DOM changes to let layout settle
+
       requestAnimationFrame(rescale);
     });
     mutationObserverRef.current.observe(container, {
@@ -143,22 +94,17 @@ function VisitorsMap() {
       subtree: true,
     });
 
-    // Resize observer on the container for responsive scaling
     resizeObserverRef.current = new ResizeObserver(() => rescale());
     resizeObserverRef.current.observe(container);
 
-    // Window events for rotations/zoom changes
     window.addEventListener("resize", rescale);
     window.addEventListener("orientationchange", rescale);
 
-    // Also try to rescale when script reports loaded
     s.onload = () => requestAnimationFrame(rescale);
 
-    // Initial attempt (in case the widget was cached/fast)
     requestAnimationFrame(rescale);
 
     return () => {
-      // Clean up observers and listeners
       if (mutationObserverRef.current) {
         mutationObserverRef.current.disconnect();
         mutationObserverRef.current = null;
@@ -170,7 +116,6 @@ function VisitorsMap() {
       window.removeEventListener("resize", rescale);
       window.removeEventListener("orientationchange", rescale);
 
-      // Remove script and injected content
       if (containerRef.current) containerRef.current.innerHTML = "";
       const existing = document.getElementById("mapmyvisitors");
       if (existing && existing.parentNode)
@@ -237,8 +182,6 @@ function App() {
                     Research
                   </NavLink>
                 </li>
-                {/* Example future item:
-                <li><a href="/cv.pdf">CV</a></li> */}
               </ul>
             </nav>
           </div>
@@ -256,12 +199,11 @@ function App() {
             />
             <h1 className="name">Yutong Zhang</h1>
 
-            {/* Contact info — unified row style */}
             <ul className="info-list" aria-label="Contact information">
               <li>
                 <span className="info" role="text">
                   <FaLocationDot aria-hidden="true" />
-                  <span>Palo Alto, CA 🇺🇸</span>
+                  <span>Palo Alto, CA</span>
                 </span>
               </li>
               <li>
@@ -277,7 +219,6 @@ function App() {
               </li>
             </ul>
 
-            {/* Socials — same row style + correct Scholar icon/label */}
             <div className="link-list" aria-label="Social profiles">
               <a
                 className="info"
@@ -448,7 +389,6 @@ function App() {
                   <div className="card">
                     <h2>🌟 Recent Updates</h2>
                     <ul className="updates">
-                      {/* New items at the top */}
                       <li>
                         <span className="update-date">10/2025</span> Joining
                         CSCW 2025 to present{" "}
@@ -509,7 +449,6 @@ function App() {
                         accepted for CHI 2025.
                       </li>
 
-                      {/* Existing items */}
                       <li>
                         <span className="update-date">11/2024</span> Our{" "}
                         <a
@@ -591,7 +530,6 @@ function App() {
                     </ul>
                   </div>
 
-                  {/* Visitors Map — after Recent Updates, before footer */}
                   <VisitorsMap />
                 </section>
               }
