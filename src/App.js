@@ -6,7 +6,8 @@ import {
   NavLink,
 } from "react-router-dom";
 import "./App.css";
-import profileImage from "./images/IMG_9101.jpg";
+// import profileImage from "./images/IMG_9101.jpg";
+import profileImage from "./images/IMG_9767.JPG";
 import Research from "./pages/Research";
 import {
   FaSquareXTwitter,
@@ -36,7 +37,7 @@ function VisitorsMap() {
     s.id = "mapmyvisitors";
     s.async = true;
     s.src =
-      "https://mapmyvisitors.com/map.js?cl=fff8e6&w=a&t=n&d=_u7xnM3BAbJNl9U6NQTSTOlq_BqOnm4XdFXwhGijbQo&co=ffffff&cmn=d1ae8b&cmo=4a4e69&ct=654a4a";
+      "https://mapmyvisitors.com/map.js?cl=d8d0bb&w=a&t=n&d=_u7xnM3BAbJNl9U6NQTSTOlq_BqOnm4XdFXwhGijbQo&co=ffffff&cmn=d1ae8b&cmo=4a4e69&ct=654a4a";
 
     container.appendChild(s);
 

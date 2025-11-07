@@ -3,18 +3,18 @@
 /* === Global variables === */
 :root {
   --bg: #ffffff; /* clean white background */
-  --header-bg: #fff8e6; /* warm wheat tone */
+  --header-bg: #ebdebc; /* warm wheat tone */
   --text: #22223b; /* primary text */
   --head: #4a4e69; /* headings / accents */
   --accent: #faedcd; /* soft tan highlight */
-  --muted: #6c757d; /* secondary text */
+  --muted: #b7a67d; /* secondary text */
   --panel: #faedcd; /* sidebar or card bg */
-  --border: #fff8e6; /* border tone */
+  --border: #ebdebc; /* border tone */
   --rc-border: #f0e1b9; /* border tone */
-  --brand: #b4895e; /* link / active color */
-  --chipBg: #fff8e6;
-  --chipHover: #fff8e6;
-  --award-bg: #d1ae8b; /* award badge bg */
+  --brand: #9b8a5e; /* link / active color */
+  --chipBg: #ebdebc;
+  --chipHover: #ebdebc;
+  --award-bg: #281b0e; /* award badge bg */
 }
 
 /* === Base === */
