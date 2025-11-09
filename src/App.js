@@ -543,7 +543,7 @@ function App() {
         <footer className="footer" role="contentinfo">
           <p className="footer-text">
             © {new Date().getFullYear()} Yutong Zhang{" "}
-            <span className="divider">·</span> Last Updated: Oct 2025
+            <span className="divider">·</span> Last Updated: Nov 2025
           </p>
         </footer>
       </div>
