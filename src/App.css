@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-/* === Global variables === */
 :root {
   --bg: #ffffff; /* clean white background */
   --header-bg: #ebdebc; /* warm wheat tone */
@@ -14,10 +13,9 @@
   --brand: #9b8a5e; /* link / active color */
   --chipBg: #ebdebc;
   --chipHover: #ebdebc;
-  --award-bg: #281b0e; /* award badge bg */
+  --award-bg: rgb(221, 194, 124); /* award badge bg */
 }
 
-/* === Base === */
 * {
   box-sizing: border-box;
 }
@@ -61,7 +59,7 @@ a:hover {
   outline: 2px solid var(--brand);
 }
 
-/* === Header === */
+/* Header */
 .header {
   position: sticky;
   top: 0;
@@ -70,7 +68,6 @@ a:hover {
   border-bottom: 1px solid var(--border);
 }
 
-/* Align header content with main container edges */
 .header-inner {
   width: 100%;
   box-sizing: border-box;
@@ -80,12 +77,12 @@ a:hover {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 12px;
-  max-width: 1100px; /* match .container width */
+  max-width: 1100px;
 }
 
 @media (min-width: 1100px) {
   .header-inner {
-    max-width: 1300px; /* align with wider container */
+    max-width: 1300px;
   }
 }
 
@@ -108,7 +105,6 @@ a:hover {
   letter-spacing: 0.3px;
 }
 
-/* Nav */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -163,7 +159,6 @@ a:hover {
   color: var(--text);
 }
 
-/* === Layout === */
 .container {
   max-width: 1100px;
   margin: 24px auto;
@@ -226,7 +221,7 @@ a:hover {
   flex: 0 0 auto;
 }
 
-/* === Research page === */
+/* Research page */
 .rc-wrap {
   display: grid;
   gap: 18px;
@@ -369,7 +364,7 @@ a:hover {
   }
 }
 
-/* === Footer === */
+/* Footer */
 .footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
@@ -380,7 +375,6 @@ a:hover {
   color: var(--brand);
 }
 
-/* === Mobile Header Adjustments === */
 @media (max-width: 1400px) {
   .header-inner {
     grid-template-columns: auto auto;
@@ -413,7 +407,6 @@ a:hover {
   }
 }
 
-/* === Responsive === */
 @media (max-width: 860px) {
   .container {
     grid-template-columns: 1fr;
