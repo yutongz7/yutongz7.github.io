@@ -199,18 +199,6 @@ export default function Research() {
         twitter: "https://x.com/zhangyt0704/status/1965095885429457386",
       },
     },
-    // {
-    //   title: "Responsible Human-Chatbot Interaction Towards Social Well-being",
-    //   authors:
-    //     "Camille Harris, Yutong Zhang, Allison Koenecke, Neha Kumar, Diyi Yang",
-    //   venue:
-    //     "ACM SIGCHI Conference on Human Factors in Computing Systems (CHI)",
-    //   year: "2026 · In Submission",
-    //   imageSrc: "/images/responsible_hci.jpg",
-    //   links: {
-    //     // paper: "",
-    //   },
-    // },
     {
       title: "Generative Interfaces for Language Models",
       authors:
@@ -227,17 +215,6 @@ export default function Research() {
         demo: "https://salt-nlp.github.io/generative_interfaces/dataviewer/data_viewer.html",
       },
     },
-    // {
-    //   title: "Human-AI Collaborative Framework for Image Transcreation",
-    //   authors:
-    //     "Simran Khanuja, Yutong Zhang, Ayush Bheemaiah, Ayush Bheemaiah1, Jainish H. Patel, Arya Pasumarthi, Armaan Sharma, Sophia Li, Yueqi Song, Michael Saxon, Diyi Yang, Graham Neubig",
-    //   venue: "ACL Rolling Review (ARR)",
-    //   year: "2026 · In Submission",
-    //   imageSrc: "/images/transcreation.jpg",
-    //   links: {
-    //     // paper: "",
-    //   },
-    // },
     {
       title:
         "Organize, Then Vote: Exploring Cognitive Load in Quadratic Survey Interfaces",
