@@ -338,7 +338,7 @@ function App() {
                         Jeff Hancock
                       </a>
                       . Previously, I earned my B.S. in Computer Science from
-                      UIUC (“Go Illini!!”), where I worked with{" "}
+                      UIUC (“Go Illini!!”), where I worked with Professors{" "}
                       <a
                         href="https://cs.illinois.edu/about/people/faculty/kkarahal"
                         target="_blank"
